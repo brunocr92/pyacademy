@@ -1,7 +1,6 @@
 #coding: utf-8
 from aluno import Aluno
 from docente import Docente
-from random import randint
 
 
 class Disciplina(object):
@@ -66,7 +65,7 @@ class Disciplina(object):
             if isinstance(aluno, Aluno):
                 if self.ocupar_vaga():
                     novos_alunos.update({aluno.id: aluno})
-                    aluno.disciplina.update({'id': self.id, 'media': 0 })
+                    aluno.disciplina.update({'id': self.id, 'notas': [] })
             else:
                 raise TypeError("Apenas alunos podem ser \
                     matriculados em disciplinas")
@@ -116,11 +115,8 @@ class Disciplina(object):
 
         for aluno in lista_alunos:
             if isinstance(aluno, Aluno):
-                if aluno.disciplina.get('id') == self.id:
-                    nota_1 = randint(0, 100)
-                    nota_2 = randint(0, 100)
-                    media = (nota_1 + nota_2) / 2
-                    aluno.disciplina.update({'media: ': media}) 
+                
+            
 
 
 

@@ -1,31 +1,30 @@
 #coding: utf-8
-
 from datetime import date, datetime
-from dateutil.relativedelta importe relativedelta
+from dateutil.relativedelta import relativedelta
 
 
-class Semestre(object)
+class Semestre(object):
 
     _ID = 1
 
     def _semestre_nome(self, datetime):
-        '''denomina o nome do semestre, sendo o primeiro
-           do ano ímpar e o segundo do ano par
-        '''
-
-        mes = datetime.month
-
-       if mes < 6:
-           return '1'
-       else:
-           return '2'
-       return res
+        """Denomina o nome do Semestre, sendo o primeiro do ano ímpar
+        e o segundo par
+        """      
+        mes = datetime.month 
+        
+        if mes < 6:
+            return '1'
+        else:
+            return '2 '
+        
 
     def __init__(self):
-    
-        self.id = self._ID; self.__class__.-ID += 1
-        self.nome = "Semestre" + str(date.today().year) + "/" self._semestre_nome(datetime)
-        self.alunos = []
+        self.id = self._ID; self.__class__._ID += 1
+        self.nome = "Semestre " +  \
+                    str(date.today().year) + "/" \
+                    + self._semestre_nome(datetime) 
+        self.alunos = [] 
         self.disciplinas = []
         self.data_inicio = datetime.today()
-        self.data_final = self.data_inicio + relative delta(months+6)
+        self.data_final  = self.data_inicio + relativedelta(months=6)
